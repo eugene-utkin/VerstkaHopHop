@@ -1,6 +1,6 @@
 <?php
 	$temp = "Дата: ";
-	echo longdate($text, time());
+	echo longdate($temp, time());
 
 	function longdate($text, $timestamp)
 	{
