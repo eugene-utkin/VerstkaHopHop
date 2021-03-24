@@ -4,6 +4,6 @@
 					'laser' => "Laser Printer",
 					'photo' => "Photographic Paper");
 
-	foreach ($paper as $item => $description)
-		echo "$item: $description<br>";
+	while (list($item, $description) = each($paper))
+		echo "$item: $description<br>"
 ?>
