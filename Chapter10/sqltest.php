@@ -55,6 +55,14 @@ _END;
 		$r4 = htmlspecialchars($row[4]);
 
 		echo <<<_END
+		<pre>
+			Author		$r0
+			Title		$r1
+			Category 	$r2
+			Year 		$r3
+			ISBN 		$r4
+		</pre>
+		<form action='sqltest.php' 
 	}
 
 ?>
