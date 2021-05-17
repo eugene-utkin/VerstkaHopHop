@@ -38,6 +38,23 @@
 	</pre></form>
 _END;
 
-	$query
+	$query = "SELECT * FROM classics";
+	$result = $conn->query($query);
+	if (!$result) die ("Сбой при доступе к базе данных");
+
+	$rows = $result->num_rows;
+
+	for ($j = 0 ; $j < $rows ; ++$j)
+	{
+		$row = $result->fetch_arrow(MYSQLI_NUM);
+
+		$r0 = htmlspecialchars($row[0]);
+		$r1 = htmlspecialchars($row[1]);
+		$r2 = htmlspecialchars($row[2]);
+		$r3 = htmlspecialchars($row[3]);
+		$r4 = htmlspecialchars($row[4]);
+
+		echo <<<_END
+	}
 
 ?>
