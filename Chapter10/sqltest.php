@@ -23,6 +23,21 @@
 		$year		= get_post($conn, 'year');
 		$isbn		= get_post('isbn');
 		$query		= "INSERT INTO classics VALUES"	. "('$author', '$title', '$category', '$year', '$isbn')";
-		$result
+		$result = $conn->query($query);
+		if (!$result) echo "Сбой при вставке данных<br><br>";
 	}
+
+	echo <<<_END
+	<form action="sqltest.php" method="post"><pre>
+		Author <input type="text" name="author">
+		Title <input type="text" name="title">
+		Category <input type="text" name="category">
+		Year <input type="text" name="year">
+		ISBN <input type="text" name="isbn">
+			<input type="submit" value="ADD RECORD"> // Кнопка ДОБАВИТЬ ЗАПИСЬ
+	</pre></form>
+_END;
+
+	$query
+
 ?>
