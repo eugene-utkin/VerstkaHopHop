@@ -46,7 +46,7 @@ _END;
 
 	for ($j = 0 ; $j < $rows ; ++$j)
 	{
-		$row = $result->fetch_arrow(MYSQLI_NUM);
+		$row = $result-> fetch_array(MYSQLI_NUM);
 
 		$r0 = htmlspecialchars($row[0]);
 		$r1 = htmlspecialchars($row[1]);
