@@ -56,11 +56,11 @@ _END;
 
 		echo <<<_END
 		<pre>
-			Author		$r0
-			Title		$r1
-			Category 	$r2
-			Year 		$r3
-			ISBN 		$r4
+Author		$r0
+Title		$r1
+Category 	$r2
+Year 		$r3
+ISBN 		$r4
 		</pre>
 		<form action='sqltest.php' method='post'>
 		<input type='hidden' name='delete' value='yes'>
