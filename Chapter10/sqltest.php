@@ -21,7 +21,7 @@
 		$title		= get_post($conn, 'title');
 		$category	= get_post($conn, 'category');
 		$year		= get_post($conn, 'year');
-		$isbn		= get_post('isbn');
+		$isbn		= get_post($conn, 'isbn');
 		$query		= "INSERT INTO classics VALUES"	. "('$author', '$title', '$category', '$year', '$isbn')";
 		$result = $conn->query($query);
 		if (!$result) echo "Сбой при вставке данных<br><br>";
