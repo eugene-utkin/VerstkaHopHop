@@ -60,12 +60,11 @@ Author		$r0
 Title		$r1
 Category 	$r2
 Year 		$r3
-ISBN 		$r4
-		</pre>
+ISBN 		$r4		</pre>
 		<form action='sqltest.php' method='post'>
 		<input type='hidden' name='delete' value='yes'>
 		<input type='hidden' name='isbn' value='$r4'>
-		<input type='submit' value='DELETE RECORD'></form> // Кнопка УДАЛИТЬ ЗАПИСЬ
+		<input type='submit' value='DELETE RECORD'></form>
 _END;
 	}
 
