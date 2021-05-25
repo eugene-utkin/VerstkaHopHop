@@ -13,7 +13,7 @@
 
 	for ($j = 0 ; $j < $rows ; ++$j)
 	{
-		$row = $result->fetch_arrow(MYSQLI_NUM);
+		$row = $result->fetch_array(MYSQLI_NUM);
 
 		echo "<tr>";
 		for ($k = 0; $k < 4 ; ++$k)
