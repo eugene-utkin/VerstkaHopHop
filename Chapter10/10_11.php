@@ -18,8 +18,7 @@
 		for ($k = 0 ; $k < 4 ; ++$k)
 			echo "<td>" . htmlspecialchars($row[$k]) . "</td>";
 		echo "</tr>";
-	]
+	}
 	
 	echo "</table>";
-	}
 ?>
