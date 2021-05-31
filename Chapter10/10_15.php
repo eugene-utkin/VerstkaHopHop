@@ -18,7 +18,7 @@
 		$subresult = $conn->query($subquery);
 		if (!$subresult) die ("Сбой при доступе к базе данных");
 
-		$subrow = $subresult->fetch_arrow(MYSQLI_NUM);
+		$subrow = $subresult->fetch_array(MYSQLI_NUM);
 		echo "&nbsp;$nbsp;" . htmlspecialchars("'$subrow[1]'") . " by " . htmlspecialchars( $subrow[0]) . "<br><br>";
 	}
 ?>
