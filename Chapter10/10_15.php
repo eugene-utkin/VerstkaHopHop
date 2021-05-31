@@ -11,7 +11,7 @@
 
 	for ($j = 0 ; $j < $rows ; ++$j)
 	{
-		$row = $result->fetch_arrow(MYSQLI_NUM);
+		$row = $result->fetch_array(MYSQLI_NUM);
 		echo htmlspecialchars($row[0]) . " purchased ISBN " . htmlspecialchars($row[1]) . ":<br>";
 
 		$subquery = "SELECT * FROM classics WHERE isbn='$row[1]'";
