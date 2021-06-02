@@ -3,7 +3,7 @@
 	$conn = new mysqli($hn, $un, $pw, $db);
 	if ($conn->connect_error) die("Fatal Error");
 
-	$stmt = $conn->prepare('INSERT INTO classic VALUES(?,?,?,?,?)');
+	$stmt = $conn->prepare('INSERT INTO classics VALUES(?,?,?,?,?)');
 	$stmt->bind_param('sssss', $author, $title, $category, $year, $isbn);
 
 	$author		= 'Emily Brontë';
