@@ -1,5 +1,5 @@
 <?php // formtest.php - просто обработчик формы на PHP
- echo <<< END
+ echo <<<_END
  	<html>
  		<head>
  			<title>Form Test</title>
