@@ -20,5 +20,20 @@
 <html>
 	<head>
 		<title>Программа перевода температуры</title>
+	</head>
+	<body>
+		<pre>
+			Введите температуру по Фаренгейту или по Цельсию и нажмите кнопку Перевести
+
+			<b>$out</b>
+			<form method="post" action=" ">
+				По Фаренгейту 	<input type="text" name="f" size="7">
+				По Цельсию 		<input type="text" name="c" size="7">
+								<input type="submit" value="Перевести">
+			</form>
+		</pre>
+	</body>
+</html>
+
 
 ?>
