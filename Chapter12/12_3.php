@@ -34,7 +34,7 @@
 	{
 		$stmt = $connection->prepare('INSERT INTO users VALUES(?,?,?,?)');
 		$stmt->bind_param('ssss', $fn, $sn, $un, $pw);
-		$stmt->execut();
+		$stmt->execute();
 		$stmt->close();
 	}
 ?>
