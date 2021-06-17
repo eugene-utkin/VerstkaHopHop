@@ -19,4 +19,21 @@
 	$username = 'bsmith';
 	$passwrod = 'mysecret';
 	$hash = password_hash($password, PASSWORD_DEFAULT);
+
+	add_user($connection, $forename, $surname, $username, $hash);
+
+	$forename = 'Pauline';
+	$surname = 'Jones';
+	$username = 'pjones';
+	$password = 'acrobat';
+	$hash = password_hash($password, PASSWORD_DEFAULT);
+
+	add_user($connection, $forename, $surname, $username, $hash);
+
+	function add_user($connection, $fn, $sn, $un, $pw)
+	{
+		$stmt = $connection->prepare('INSERT INTO users VALUES(?,?,?,?)');
+		$stmt->bind_param('ssss', $fn, $sn, $un, $pw);
+		$stmt->execut();
+		$stmt->close();
 ?>
