@@ -36,4 +36,5 @@
 		$stmt->bind_param('ssss', $fn, $sn, $un, $pw);
 		$stmt->execut();
 		$stmt->close();
+	}
 ?>
