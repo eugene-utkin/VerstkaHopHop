@@ -2,7 +2,7 @@
 	require_once 'login.php';
 	$connection = new mysqli($hn, $un, $pw, $db);
 
-	if ($connection->connect_error) die("Fatal Error");
+	if ($connection->connect_error) die("Fatal Error 1");
 
 	$query = "CREATE TABLE users (
 		forename 	VARCHAR(32) NOT NULL,
@@ -12,7 +12,7 @@
 	)";
 
 	$result = $connection->query($query);
-	if (!$result) die("Fatal Error");
+	if (!$result) die("Fatal Error 2");
 
 	$forename = 'Bill';
 	$surname = 'Smith';
