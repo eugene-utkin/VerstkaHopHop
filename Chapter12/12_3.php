@@ -12,12 +12,12 @@
 	)";
 
 	$result = $connection->query($query);
-	if (!$result) die("Fatal Error 2");
+	if (!$result) die ("Fatal Error 2");
 
 	$forename = 'Bill';
 	$surname = 'Smith';
 	$username = 'bsmith';
-	$passwrod = 'mysecret';
+	$password = 'mysecret';
 	$hash = password_hash($password, PASSWORD_DEFAULT);
 
 	add_user($connection, $forename, $surname, $username, $hash);
