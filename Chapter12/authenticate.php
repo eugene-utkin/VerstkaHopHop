@@ -19,12 +19,12 @@
 
 			$result->close();
 
-			if (password_verify($pw_temp, $row[3])) echo
+			if (password_verify($_SERVER['PHP_AUTH_PW'], $row[3])) echo
 				htmlspecialchars("$row[0] $row[1] :
 				Hi $row[0], you are logged in as '$row[2]'");
-			else die("Неверная комбинация имя пользователя - пароль");
+			else die("Неверная комбинация имя пользователя - пароль 1 - $_SERVER['PHP_AUTH_PW'] - $row[3]");
 		}
-		else die("Неверная комбинация имя пользователя - пароль");
+		else die("Неверная комбинация имя пользователя - пароль 2");
 	}
 	else
 	{
