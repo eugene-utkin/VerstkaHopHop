@@ -16,14 +16,13 @@
 		elseif ($result->num_rows)
 		{
 			$row = $result->fetch_array(MYSQLI_NUM);
-			$final_row = mysql_entities_fix_string($connection, $final_row);
 
 			$result->close();
 
-			if (password_verify($pw_temp, $final_row[3])) echo
+			if (password_verify($pw_temp, $row[3])) echo
 				htmlspecialchars("$row[0] $row[1] :
 				Hi $row[0], you are logged in as '$row[2]'");
-			else die("Неверная комбинация имя пользователя - пароль 1 - $pw_temp - $final_row[3]");
+			else die("Неверная комбинация имя пользователя - пароль 1 - $pw_temp - $row[3]");
 		}
 		else die("Неверная комбинация имя пользователя - пароль 2");
 	}
