@@ -19,10 +19,16 @@
 			$result->close();
 			if (password_verify($pw_temp, $row[3]))
 			{
-				session_start
+				session_start();
+				$_SESSION['forename'] = $row[0];
+				$_SESSION['surname'] = $row[1];
+				echo htmlspecialchars("$row[0] $row[1] : Привет, $row[0], теперь вы зарегистрированы под именем '$row[2]'";
+				die ("<p><a href='continue.php'>Щелкните здесь для продолжения</a></p>");)
 			}
+			else die("Неверная комбинация имя пользователя - пароль");
 		}
-
-			
+		else die("Неверная комбинация имя пользователя - пароль");
 	}
+	else
+	
 ?>
