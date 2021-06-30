@@ -31,7 +31,7 @@
 	}
 	else
 	{
-		header('WWW-Authenticate: Basic realm="Restricted Area');
+		header('WWW-Authenticate: Basic realm="Restricted Area"');
 		header('HTTP/1.0 401 Unauthorized');
 		die ("Пожалуйста, введите имя пользователя и пароль");
 	}
