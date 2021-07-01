@@ -6,6 +6,10 @@
 
 	if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']))
 	{
+		header('WWW-Authenticate: Basic realm="Restricted Area"');
+		header('HTTP/1.0 401 Unauthorized');
+		die ("Пожалуйста, введите имя пользователя и пароль");
+	}
 		$un_temp = mysql_entities_fix_string($connection, $_SERVER['PHP_AUTH_USER']);
 		$pw_temp = mysql_entities_fix_string($connection, $_SERVER['PHP_AUTH_PW']);
 		$query = "SELECT * FROM users WHERE username='$un_temp'";
@@ -27,13 +31,7 @@
 			else die("Неверная комбинация имя пользователя - пароль");
 		}
 		else die("Неверная комбинация имя пользователя - пароль");
-	}
-	else
-	{
-		header('WWW-Authenticate: Basic realm="Restricted Area"');
-		header('HTTP/1.0 401 Unauthorized');
-		die ("Пожалуйста, введите имя пользователя и пароль");
-	}
+
 	$connection->close();
 	function mysql_entities_fix_string($connection, $string)
 	{
