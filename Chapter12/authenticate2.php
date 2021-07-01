@@ -4,8 +4,7 @@
 
 	if ($connection->connect_error) die("Fatal Error");
 
-	if (isset($_SERVER['PHP_AUTH_USER']) &&
-		isset($_SERVER['PHP_AUTH_PW']))
+	if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']))
 	{
 		$un_temp = mysql_entities_fix_string($connection, $_SERVER['PHP_AUTH_USER']);
 		$pw_temp = mysql_entities_fix_string($connection, $_SERVER['PHP_AUTH_PW']);
