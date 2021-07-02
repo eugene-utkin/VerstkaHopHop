@@ -13,6 +13,8 @@
 	$un_temp = mysql_entities_fix_string($connection, $_SERVER['PHP_AUTH_USER']);
 	$pw_temp = mysql_entities_fix_string($connection, $_SERVER['PHP_AUTH_PW']);
 	$query = "SELECT * FROM users WHERE username='$un_temp'";
+	$result = $connection->query($query);
+	
 	if (!$result = $connection->query($query)) {
 		die($connection->error);
 	}
@@ -30,7 +32,7 @@
 	}
 
 	$connection->close();
-	
+
 	function mysql_entities_fix_string($connection, $string)
 	{
 		return htmlentities(mysql_fix_string($connection, $string));
