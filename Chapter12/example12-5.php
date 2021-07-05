@@ -16,11 +16,10 @@
     elseif ($result->num_rows)
     {
       $row = $result->fetch_array(MYSQLI_NUM);
-      $pass = password_hash($row[3], PASSWORD_DEFAULT);
 
       $result->close();
 
-      if (password_verify($pw_temp, $pass))
+      if (password_verify($pw_temp, $row[3]))
       {
         session_start();
         $_SESSION['forename'] = $row[0];
