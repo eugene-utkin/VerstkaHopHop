@@ -6,7 +6,10 @@
 	{
 		out = "К сожалению, обнаружена ошибка.\n\n";
 		out += "Ошибка: " + message + "\n";
-		out += "URL: ";
+		out += "URL: " + url + "\n";
+		out += "Строка: " + line + "\n\n";
+		out += "Нажмите кнопку ОК для продолжения работы. \n\n";
+		alert(out);
+		return true;
 	}
-
 </script>
