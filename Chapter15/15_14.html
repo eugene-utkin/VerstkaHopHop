@@ -1,0 +1,22 @@
+<script>
+	numbers = []
+
+	for (j=1 ; j<6 ; ++j)
+	{
+		if (j == 2 || j == 5)
+		{
+			document.write("Выполнение намеченной задачи #" + j + "<br>")
+		}
+		else
+		{
+			document.write("Откладывание намеченной задачи #" + j + " на потом<br>")
+			numbers.push(j)
+		}
+	}
+
+	document.write("<br>Завершено выполнение приоритетных задач.")
+	document.write("<br>Начало выполнения отложенных задач в порядке, обратном их следованию.<br><br>")
+	document.write("Выполнение намеченной задачи #" + numbers.pop() + "<br>")
+	document.write("Выполнение намеченной задачи #" + numbers.pop() + "<br>")
+	document.write("Выполнение намеченной задачи #" + numbers.pop() + "<br>")
+</script>
