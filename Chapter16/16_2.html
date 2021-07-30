@@ -63,10 +63,10 @@
 			function validateEmail(field)
 			{
 				if (field == "") return "Не введен адрес электронной почты.\n"
-				else if (!((field.indexOf(".") >
+				else if (!((field.indexOf(".") > 0) && (field.indexOf("@") > 0)) || /[^a-zA-Z0-9.@_-]/.test(field))
+					return "Электронный адрес имеет неверный формат.\n"
+				return ""
 			}
-
-
 		</script>
 	</head>
 	<body>
