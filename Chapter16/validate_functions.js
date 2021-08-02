@@ -1,15 +1,3 @@
-function validate(form) {
-				fail = validateForename(form.forename.value)
-				fail += validateSurname(form.surname.value)
-				fail += validateUsername(form.username.value)
-				fail += validatePassword(form.password.value)
-				fail += validateAge(form.age.value)
-				fail += validateEmail(form.email.value)
-
-				if (fail == "") return true
-				else { alert(fail); return false}
-			}
-
 			function validateForename(field)
 			{
 				return (field == "") ? "Не введено имя.\n" : ""
