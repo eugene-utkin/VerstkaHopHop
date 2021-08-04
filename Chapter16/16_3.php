@@ -37,5 +37,26 @@
 
 	}
 
-	
+	// Теперь выводится HTML и код JavaScript
+
+	echo <<<_END
+
+	<!-- Раздел HTML и JavaScript -->
+
+	<style>
+		.signup {
+			border: 1px solid #999999;
+			font: normal 14px helvetica;
+			color: #444444;
+		}
+	</style>
+
+	<script>
+		function validate(form)
+		{
+			fail = validateForename(form.forename.value)
+			fail += validateSurname(form.surname.value)
+			fail += validateSurname(form.surname.value)
+		}
+	</script>
 ?>
