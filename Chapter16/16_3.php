@@ -188,4 +188,10 @@ _END;
 			return "Электронный адрес имеет неверный формат<br>";
 		return "";
 	}
+
+	function fix_string($string)
+	{
+		if (get_magic_quotes_gpc()) $string = stripslashes($string);
+		return htmlentities ($string);
+	}
 ?>
