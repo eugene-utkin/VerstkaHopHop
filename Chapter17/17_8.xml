@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>RSS-поток</title>
+		<link>http://website.com</link>
+		<description>RSS-поток website.com </description>
+		<pubDate>Понедельник, 11 мая 2020 года, 00:00:00 GMT</pubDate>
+		<item>
+			<title>Заголовок</title>
+			<guid>http://website.com/headline</guid>
+			<description>Это заголовок</description>
+		</item>
+		<item>
+			<title>Заголовок 2</title>
+			<guid>http://website.com/headline2</guid>
+			<description>Второй заголовок</description>
+		</item>
+	</channel>
+</rss>
