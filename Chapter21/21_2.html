@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Второй пример jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <blockquote> При всей гибкости и эффективности JavaScript, а также при всем изобилии имеющихся в этом языке встроенных функций все же сохраняется потребность в дополнительных уровнях кода, позволяющих упростить, к примеру, получение эффектов анимации, обработку событий и применение технологии асинхронного обмена данными, то есть сделать то, чего нельзя достичь применением обычных средств JavaScript или CSS.</blockquote>
+    <div id='advert'>Это реклама</div>
+    <p>Это мой <span class='new'>новый</span> сайт</p>
+    <script>
+      $('blockquote').css('background', 'lime')
+      $('#advert').css('border', '3px dashed red')
+      $('.new').css('text-decoration', 'underline')
+      $('blockquote, #advert, .new').css('font-wright', 'bold')
+    </script>
+  </body>
+</html>
