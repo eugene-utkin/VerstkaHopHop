@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>События jQuery</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <button id='clickme'>Нажми меня</button>
+    <p id='result'>Я - абзац</p>
+    <script>
+      $('#clickme').click(function()
+      {
+        $('result').html('Вы нажали кнопку!')
+      })
+    </script>
+  </body>
+</html>
