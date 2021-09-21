@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>События: click и dblclick</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <h2>Сделайте на кнопках одинарный и двойной щелчок</h2>
+    <button class='myclass'>Кнопка 1</button>
+    <button class='myclass'>Кнопка 2</button>
+    <button class='myclass'>Кнопка 3</button>
+    <button class='myclass'>Кнопка 4</button>
+    <button class='myclass'>Кнопка 5</button>
+    <script>
+      $('.myclass').click(function() { $(this).slideUp() })
+      $('.myclass').dblclick(function() { $(this).hide() })
+    </script>
+  </body>
+</html>
