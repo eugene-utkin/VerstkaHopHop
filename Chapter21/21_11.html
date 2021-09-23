@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Эффекты: hide и show</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <button id='hide'>Спрятать</button>
+    <button id='show'>Показать</button>
+    <p id='text'>Щелкните на кнопках Спрятать и Показать</p>
+    <script>
+      $('#hide').click(function() { $('#text').hide('slow', 'linear') })
+      $('#show').click(function() { $('#text').show('slow', 'linear') })
+    </script>
+  </body>
+</html>
