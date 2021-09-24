@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Эффекты: Растворение и проявление</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <button id='fadeout'>Растворить</button>
+    <button id='fadein'>Проявить</button>
+    <button id='fadetoggle'>Переключить состояние</button>
+    <button id='fadeto'>Растворить на 50%</button>
+    <p id='text'>Щелкните на кнопках, расположенных вверху</p>
+    <script>
+      $('#fadeout').click(function() { $('#text').fadeOut('slow') })
+      $('#fadein').click(function() { $('#text').fadeIn('slow') })
+      $('#fadetoggle').click(function() { $('#text').fadeToggle('slow') })
+      $('#fadeto').click(function() { $('#text').fadeTo('slow', 0.5) })
+    </script>
+  </body>
+</html>
