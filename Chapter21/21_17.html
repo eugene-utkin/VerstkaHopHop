@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM: attr</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <h2>Пример документа</h2>
+    <p><a id='link' href='http://google.com' title='Google'>Посетите Google</a></p>
+    <script>
+      $('#link').text('Посетите Yahoo!')
+      $('#link').attr({ href:'http://yahoo.com', title:'Yahoo!' })
+      alert('Новый код HTML:\n' + $('p').html())
+    </script>
+  </body>
+</html>
