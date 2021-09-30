@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Работа с размерами</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <p>
+      <button id='getdoc'>Получить ширину документа </button>
+      <button id='getwin'>Получить ширину окна</button>
+      <button id='getdiv'>Получить ширину div-элемента</button>
+      <button id='setdiv'>Установить ширину div-элемента равной 150 пикселам</button>
+    </p>
+    <div id='result' style='width:300px; height:50px; background:#def;'>
+    </div>
+    <script>
+      $('#getdoc').click(function()
+      {
+        $('#result').html('Ширина документа: ' + $(document).width())
+      })
+      $('#getwin').click(function()
+      {
+        $('#result').html('Ширина окна: ' + $(window).width())
+      })
+      $('#getdiv').click(function()
+      {
+        $('#result').html('Ширина div-элемента: ' + $('#result').width())
+      })
+      $('#setdiv').click(function()
+      {
+        $('#result').width(150)
+        $('#result').html('Ширина div-элемента: ' + $('#result').width())
+      })
+    </script>
+  </body>
+</html>
