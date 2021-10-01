@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Обход DOM: Parent</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемент 3</li>
+    </ul>
+    <ul class='memo'>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемень 3</li>
+    </ul>
+    <ul>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемент 3</li>
+    </ul>
+    <script>
+      $('li').parent().css('font-weight', 'bold')
+      $('li').parent('.memo').css('list-style-type', 'circle')
+    </script>
+  </body>
+</html>
