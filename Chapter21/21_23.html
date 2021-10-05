@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Обход выбранных элементов</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li id='new'>Элемент 3</li>
+      <li>Элемент 4
+        <ol type='a'>
+          <li>Элемент 4a</li>
+          <li>Элемень 4b</li>
+        </ol></li>
+      <li>Элемент 5</li>
+    </ul>
+    <script>
+      $('ul>li').first().css('text-decoration', 'underline')
+      $('ul>li').last().css('font-style', 'italic')
+      $('ul>li').eq(1).css('font-weight', 'bold')
+      $('ul>li').filter(':even').css('background', 'cyan')
+      $('ul>li').not('#new').css('color', 'blue')
+      $('ul>li').has('ol').css('text-decoration', 'line-through')
+    </script>
+  </body>
+</html>
