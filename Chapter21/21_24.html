@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Использование метода is</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body>
+    <div><button>Кнопка в div-контейнере</button></div>
+    <div><button>Кнопка в div-контейнере</button></div>
+    <span><button>Кнопка в span-контейнере</button></span>
+    <div><button>Кнопка в div-контейнере</button></div>
+    <span><button>Кнопка в span-контейнере</button></span>
+    <p id='info'></p>
+    <script>
+      $('button').click(function()
+      {
+        var elem = ''
+
+        if ($(this).parent().is('div')) elem='div'
+        else elem='span'
+
+        $('#info').html('Вы щелкнули на ' + elem)
+      })
+    </script>
+  </body>
+</html>
