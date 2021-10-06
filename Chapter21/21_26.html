@@ -9,7 +9,7 @@
     <div id='info'>Это предложение будет заменено</div>
 
     <script>
-      $/post('urlpost.php', { url: 'amazon.com/gp/aw' }, function(data)
+      $.post('urlpost.php', { url: 'amazon.com/gp/aw' }, function(data)
       {
         $('#info').html(data)
       })
