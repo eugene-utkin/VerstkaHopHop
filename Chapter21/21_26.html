@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html> <!-- jqueryasuncpost.htm -->
+  <head>
+    <title>jQuery асинхронный POST-запрос</title>
+    <script src="jquery-3.6.0.js"></script>
+  </head>
+  <body style='text-align:center'>
+    <h1>Загрузка веб-страницы в DIV</h1>
+    <div id='info'>Это предложение будет заменено</div>
+
+    <script>
+      $/post('urlpost.php', { url: 'amazon.com/gp/aw' }, function(data)
+      {
+        $('#info').html(data)
+      })
+    </script>
+  </body>
+</html>
