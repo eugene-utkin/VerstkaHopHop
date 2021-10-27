@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Шрифт с заливкой</title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    <canvas id='mycanvas' width='1024' height='240'></canvas>
+
+    <script>
+      canvas = O('mycanvas')
+      context = canvas.getContext('2d')
+
+      context.font = 'bold 140px Times'
+      context.textBaseline = 'top'
+
+      image = new Image()
+      image.src = 'wicker.jpg'
+      image.onload = function()
+      {
+        pattern = context.createPattern(image, 'repeat')
+        context.fillStyle = pattern
+        context.fillText('WickerpediA', 0, 0)
+        context.strokeText('WickerpediA', 0, 0)
+      }
+    </script>
+  </body>
+</html>
