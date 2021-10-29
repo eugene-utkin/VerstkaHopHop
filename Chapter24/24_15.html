@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Рисование в вырезанной области</title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    <canvas id='mycanvas' width='640' height='480'></canvas>
+    <script>
+      canvas = O('mycanvas')
+      context = canvas.getContext('2d')
+      S(canvas).background = 'lightblue'
+      context.fillStyle = 'white'
+      context.strokeRect(20, 20, 600, 440)  // Черная граница
+      context.fillRect(20, 20, 600, 440)  // Белый фон
+
+      context.beginPath()
+      
+      for (j = 0 ; j < 10 ; ++j)
+      {
+        context.moveTo(20, j * 48)
+        context.lineTo(620, j * 48)
+        context.lineTo(620, j * 48 + 30)
+        context.lineTo(20, j * 48 + 30)
+      }
+      context.clip()
+      context.closePath()
+
+      context.fillStyle = 'blue'  // Синее небо
+      context.fillRect(20, 20, 600, 320)
+      context.fillStyle = 'green' // Зеленая трава
+      context.fillRect(20, 320, 600, 140)
+      context.strokeStyle = 'orange'
+      context.fillStyle = 'yellow'
+
+      orig = 170
+      points = 21
+      dist = Math.PI / points * 2
+      scale1 = 130
+      scale2 = 80
+
+      context.beginPath()
+
+      for (j = 0 ; j < points ; ++j)
+      {
+        x = Math.sin(j * dist)
+        y = Math.cos(j * dist)
+        context.lineTo(orig + x * scale1, orig + y * scale1)
+        context.lineTo(orig + x * scale2, orig + y * scale2)
+      }
+
+      context.closePath()
+      context.stroke() // Контур солнца
+      context.fill() // Заливка солнца
+    </script>
+  </body>
+</html>
