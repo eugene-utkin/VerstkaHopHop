@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Манипулирование данными изображения</title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    <canvas id='mycanvas' width='480' height='200'></canvas>
+    <script>
+      canvas = O('mycanvas')
+      context = canvas.getContext('2d')
+      S(canvas).background = 'lightblue'
+
+      myimage = new Image()
+      myimage.src = 'apple.png'
+
+    </script>
+  </body>
+</html>
