@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Рабочие веб-процессы</title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    Текущее самое большое простое число: <span id='result'>0</span>.
+
+    <script>
+      if (!!window.Worker)
+      {
+        var worker = new Worker('worker.js')
+        worker.onmessage = function (event)
+        {
+          O('result').innerText = event.data;
+        }
+      }
+      else
+      {
+        alert("Рабочие веб-процессы не поддерживаются")
+      }
+    </script>
+  </body>
+</html>
