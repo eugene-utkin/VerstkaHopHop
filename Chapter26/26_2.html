@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Локальное хранилище</title>
+  </head>
+  <body>
+    <script>
+      if (typeof localStorage == "undefined")
+      {
+        alert("Локальное хранилище недоступно")
+      }
+      else
+      {
+        loc = localStorage.getItem('loc')
+        lan = localStorage.getItem('lan')
+        alert("Текущие значения 'loc' и 'lan':\n\n" + loc + " / " + lan + "\n\nНажмите кнопку ОК, чтобы присвоить значения")
+
+        localStorage.setItem('loc', 'USA')
+        localStorage.setItem('lan', 'English')
+        loc = localStorage.getItem('loc')
+        lan = localStorage.getItem('lan')
+        alert("Текущие значения 'loc' и 'lan':\n\n" + loc + " / " + lan + "\n\nНажмите кнопку ОК, чтобы очистить значения")
+
+        localStorage.removeItem('loc')
+        localStorage.removeItem('lan')
+        loc = localStorage.getItem('loc')
+        lan = localStorage.getItem('lan')
+        alert("Текущие значения 'loc' и 'lan':\n\n" + loc + " / " + lan)
+      }
+    </script>
+  </body>
+</html>
