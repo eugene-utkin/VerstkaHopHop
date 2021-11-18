@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Веб-сообщения (b)</title>
+    <style>
+      #output {
+        font-family: "Courier New";
+        white-space:pre;
+      }
+    </style>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    <div id="output">Полученные сообщения будут отображаться здесь</div>
+
+    <script>
+      window.onmessage = function(event)
+      {
+        O('output').innerHTML =
+        '<b>Origin:</b> ' + event.origin + '<br>' +
+        '<b>Source:</b> ' + event.source + '<br>' +
+        '<b>Data:</b> ' + event.data
+      }
+    </script>
+  </body>
+</html>
