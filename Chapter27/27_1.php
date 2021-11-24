@@ -23,9 +23,9 @@
 
   function destroySession()
   {
-    $_SESSION=array():
+    $_SESSION=array();
     if (sessin_id() != "" isset($_COOKIE[session_name()]))
-      setcookie(session_name(), '', time()-2592000, '/'):
+      setcookie(session_name(), '', time()-2592000, '/');
 
     session_destroy();
   }
@@ -43,7 +43,7 @@
   function showProfile($user)
   {
     if (file_exists("$user.jpg"))
-    echo "<img src='$user.jpg' align='left'>";
+      echo "<img src='$user.jpg' align='left'>";
 
     $result = queryMysql("SELECT * FROM profiles WHERE user='$user'");
 
