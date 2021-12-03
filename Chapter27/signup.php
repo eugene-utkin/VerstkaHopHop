@@ -25,7 +25,9 @@ echo <<<_END
 _END;
 
   $error = $user = $pass = "";
-  if (isset($_SESSION['user']))
+  if (isset($_SESSION['user'])) destroySession();
+
+  if (isset($_POST['user']))
   {
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
@@ -54,7 +56,8 @@ echo <<<_END
       </div>
       <div data-role='fieldcontain'>
         <label>Username</label>
-        <input type='text' maxlength='16' name='user' value='$user' onBlur='checkUser(this)'>
+        <input type='text' maxlength='16' name='user' value='$user'
+          onBlur='checkUser(this)'>
         <label></label><div id='used'>&nbsp;</div>
       </div>
       <div data-role='fieldcontain'>
@@ -68,5 +71,5 @@ echo <<<_END
     </div>
   </body>
 </html>
-_END
+_END;
 ?>
