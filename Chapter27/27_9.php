@@ -54,7 +54,7 @@
 
     if (($t1 + $t2) > 1) echo " &harr; is a mutual friend";
     elseif ($t1)         echo " &larr; you are following";
-    elseif ($t2)       { echo " $rarr; is following you";
+    elseif ($t2)       { echo " &rarr; is following you";
                          $follow = "recip"; }
 
     if (!$t1) echo " [<a data-transition='slide'
