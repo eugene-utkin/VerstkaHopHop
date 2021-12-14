@@ -50,7 +50,7 @@
     $t1 = $result1->num_rows;
     $result1 = queryMysql("SELECT * FROM friends WHERE
       user='$user' AND friend='" . $row['user'] . "'");
-    $t2 = $result1->num_rowsl
+    $t2 = $result1->num_rows;
 
     if (($t1 + $t2) > 1) echo " &harr; is a mutual friend";
     elseif ($t1) echo " $larr; you are following";
