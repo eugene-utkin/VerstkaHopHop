@@ -21,8 +21,7 @@
   {
     $add = sanitizeString($_GET['add']);
 
-    $result = queryMysql("SELECT * FROM friends
-      WHERE user='$add' AND friend='$user'");
+    $result = queryMysql("SELECT * FROM friends WHERE user='$add' AND friend='$user'");
     if (!$result->num_rows)
       queryMysql("INSERT INTO friends VALUES ('$add', '$user')");
   }
