@@ -59,7 +59,8 @@
 
     if (!$t1) echo " [<a data-transition='slide'
       href='members.php?add=" . $row['user'] . "'>$follow</a>]";
-    else      echo " [<a data-transition='slide' href='members.php?remove=" . $row['user'] . "'>drop</a>]";
+    else      echo " [<a data-transition='slide'
+      href='members.php?remove=" . $row['user'] . "'>drop</a>]";
   }
 ?>
     </ul></div>
