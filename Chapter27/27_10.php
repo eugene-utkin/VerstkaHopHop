@@ -18,23 +18,23 @@
     $name2 = "$view's";
     $name3 = "$view is";
   }
-  // Снимите комментарий со следующей строки кода,
-  // если хотите, чтобы здесь был показан профиль пользователя
-  // showProfile($view);
+
+  // Снимите комментарий со следующей строки кода, если хотите, чтобы здесь
+  // был показан профиль пользователя showProfile($view);
 
   $followers = array();
   $following = array();
 
   $result = queryMysql("SELECT * FROM friends WHERE user='$view'");
-  $num = $result->num_rows;
+  $num    = $result->num_rows;
 
-  for ($j = 0; $j < $num ; ++$j)
+  for ($j = 0 ; $j < $num ; ++$j)
   {
-    $row = $result->fetch_array(MYSQLI_ASSOC);
+    $row           = $result->fetch_array(MYSQLI_ASSOC);
     $followers[$j] = $row['friend'];
   }
 
-  $result = queryMysql("SELECT * FROM friends WHERE user='$view'");
+  $result = queryMysql("SELECT * FROM friends WHERE friend='$view'");
   $num = $result->num_rows;
 
   for ($j = 0 ; $j > $num ; ++$j)
