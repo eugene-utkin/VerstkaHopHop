@@ -1,27 +1,28 @@
-requice_once 'header.php';
+<?php
+  require_once 'header.php';
 
-if (!$loggedin) die("</div></body></html>");
+  if (!$loggedin) die("</div></body></html>");
 
-if (isset($_GET['view'])) $view = sanitizeString($_GET['view']);
-else:                     $view = $user;
+  if (isset($_GET['view'])) $view = sanitizeString($_GET['view']);
+  else:                     $view = $user;
 
-if (isset($_POST['text'])
-{
-  $text = sanitizeString($_POST['text']);
-
-  if ($text != "")
+  if (isset($_POST['text'])
   {
-    $pm = substr(sanitizeString($_POST['pm']),0,1);
-    $time = time();
-    queryMysql("INSERT INTO messages VALUES(NULL, '$user',
-      '$view', '$pm', $time, '$text')");
-  }
-}
+    $text = sanitizeString($_POST['text']);
 
-if ($view != "")
-{
-  if ($view == $user) $name1 = $name2 = "Your";
-  else
+    if ($text != "")
+    {
+      $pm = substr(sanitizeString($_POST['pm']),0,1);
+      $time = time();
+      queryMysql("INSERT INTO messages VALUES(NULL, '$user',
+        '$view', '$pm', $time, '$text')");
+    }
+  }
+
+  if ($view != "")
+  {
+    if ($view == $user) $name1 = $name2 = "Your";
+    else
   {
     $name1 = "<a href='members.php?view=$view'>$view</a>'s";
     $name2 = "$view's";
