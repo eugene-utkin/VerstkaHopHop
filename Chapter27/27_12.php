@@ -9,9 +9,8 @@
          to refresh the screen.</div>";
   }
   else echo "<div class='center'>You cannot log out because
-            you are not logged in</div>";
+             you are not logged in</div>";
 ?>
-
     </div>
   </body>
 </html>
