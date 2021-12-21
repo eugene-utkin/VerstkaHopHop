@@ -23,23 +23,23 @@
   {
     if ($view == $user) $name1 = $name2 = "Your";
     else
-  {
-    $name1 = "<a href='members.php?view=$view'>$view</a>'s";
-    $name2 = "$view's";
-  }
+    {
+      $name1 = "<a href='members.php?view=$view'>$view</a>'s";
+      $name2 = "$view's";
+    }
 
-  echo "<h3>$name1 Messages</h3>";
-  showProfile($view);
+    echo "<h3>$name1 Messages</h3>";
+    showProfile($view);
 
-  echo <<<_END
-    <form method='post' action='messages.php?view=$view'>
-      <fieldset data-role="controlgroup" data-type="horizontal">
-        <legend>Type here to leave a message</legend>
-        <input type='radio' name='pm' id='public' value='0' checked='checked'>
-        <label for="public">Public</label>
-        <input type='radio' name='pm' id='private' value='1'>
-        <label for="private">Private</label>
-      </fieldset>
+    echo <<<_END
+      <form method='post' action='messages.php?view=$view'>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+          <legend>Type here to leave a message</legend>
+          <input type='radio' name='pm' id='public' value='0' checked='checked'>
+          <label for="public">Public</label>
+          <input type='radio' name='pm' id='private' value='1'>
+          <label for="private">Private</label>
+        </fieldset>
       <textarea name='text'></textarea>
       <input data-transition='slide' type='submit' value='Post Message'>
     </form><br>
@@ -53,16 +53,15 @@ _END;
       queryMysql("DELETE FROM messages WHERE id=$erase AND recip='$user'");
     }
 
-    $query = "SELECT * FROM messages WHERE recip='$view' ORDER BY time DESC";
+    $query  = "SELECT * FROM messages WHERE recip='$view' ORDER BY time DESC";
     $result = queryMysql($query);
-    $num = $result->num_rows;
+    $num    = $result->num_rows;
 
     for ($j = 0 ; $j < $num ; ++$j)
     {
       $row = $result->fetch_array(MYSQLI_ASSOC);
 
-      if ($row['pm'] == 0 || $row['auth'] == $user ||
-          $row['recip'] == $user)
+      if ($row['pm'] == 0 || $row['auth'] == $user || $row['recip'] == $user)
       {
         echo date('M jS \'y g:ia:', $row['time']);
         echo " <a href='messages.php?view=" . $row['auth'] .
@@ -89,6 +88,7 @@ _END;
   echo "<br><a data-role='button'
         href='messages.php?view=$view'>Refresh messages</a>";
 ?>
+
     </div><br>
   </body>
 </html>
